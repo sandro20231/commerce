@@ -2,14 +2,16 @@
 
 {% block body %}
 <h1>Crie um novo anúncio</h1>
-<form action="{% url 'inserirproduto' %}" method="post">
-    {% csrf_token %}
-    <input type="text" name="titulo" placeholder="Título do anunúcio"><br>
-    <textarea placeholder="Descreva o produto" name="descricao"></textarea><br>
-    <input type="number" name="lanceinicial" placeholder="Qual o lance inicial?"><br>
-    <input type="text" name="linkimagem" placeholder="Link do produto"><br>
-    <input type="text" name="categoria" Placeholder="categoria do produto"><br>
-    <button type="submit">Enviar</button>
+<div class="paiinseriranuncio">
+    <form action="{% url 'inserirproduto' %}" method="post" class="inseriranuncio">
+        {% csrf_token %}
+        <input type="text" name="titulo" placeholder="Título do anunúcio"><br>
+        <textarea placeholder="Descreva o produto" name="descricao" class="descricaoproduto"></textarea><br>
+        <input type="number" name="lanceinicial" placeholder="Qual o lance inicial?"><br>
+        <input type="text" name="linkimagem" placeholder="Link do produto"><br>
+        <input type="text" name="categoria" Placeholder="categoria do produto"><br>
+        <button type="submit" class="botaoinserirproduto">Enviar</button>
 
-</form>
+    </form>
+</div>
 {% endblock %}

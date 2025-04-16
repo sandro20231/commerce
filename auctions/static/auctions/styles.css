@@ -1,3 +1,45 @@
 body {
     padding: 10px;
 }
+
+.tabela {
+    border: 1px solid black;
+    text-align: center;
+    width: 200px;
+    height: 200px;
+}
+
+.tabelprinciapl {
+    border-collapse: collapse;
+}
+
+.tabela1 {
+    border: 1px solid black;
+
+}
+
+.tabela2 {
+    border: 1px solid black;
+    width: 800px;
+}
+
+.paiinseriranuncio {
+    border: 1px solid black;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.descricaoproduto {
+    width: 190px;
+    height: 180px;
+    margin-top: 5px;
+}
+
+.botaoinserirproduto {
+    width: 190px;
+    margin: 10px;
+    margin-left: 0;
+}

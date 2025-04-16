@@ -1,7 +1,30 @@
 {% extends "auctions/layout.html" %}
 
 {% block body %}
-    <h2>Active Listings</h2>
+<h2>Active Listings</h2>
+<table class="tabelaprincipal">
+    <thead>
+        <tr>
+            <th class="tabela1">Imagem</th>
+            <th class="tabela1">Título</th>
+            <th class="tabela1">Descrição</th>
 
-    TODO
+        </tr>
+    </thead>
+    <tbody>
+        {% for l in listagemativa %}
+        <tr>
+
+            <td class="tabela"><img src="{{ l.imagem }}" alt="Imagem do anúncio" width="200"></td>
+            <td class="tabela">{{ l.titulo }}<br> {{ l.categoria }}<br> ${{ l.lance_inicial }}
+            </td>
+            <td class="tabela2">{{ l.descricao }}</td>
+            <br>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+TODO
 {% endblock %}
