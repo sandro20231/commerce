@@ -8,13 +8,13 @@ class User(AbstractUser):
 
 class Anuncio(models.Model):
     titulo = models.CharField(max_length=64)
-    descrição = models.CharField(max_length=1000)
+    descricao = models.CharField(max_length=1000)
     lance_inicial = models.FloatField()
     imagem = models.URLField()
     categoria = models.CharField(max_length=64)
 
     def __str__(self):
-        return f"{self.titulo}/{self.categoria} Lançe inicial: {self.lance_inicial}, Descrição {self.descrição}"
+        return f"{self.titulo}/{self.categoria} Lançe inicial: {self.lance_inicial}, Descrição {self.descricao}"
 
 
 class Lance(models.Model):

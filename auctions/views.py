@@ -4,11 +4,12 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
 
-from .models import User
+from .models import User, Anuncio
 
 
 def index(request):
-    return render(request, "auctions/index.html")
+
+    return render(request, "auctions/index.html", {"listagemativa": Anuncio.objects.all()})
 
 
 def login_view(request):
@@ -61,3 +62,17 @@ def register(request):
         return HttpResponseRedirect(reverse("index"))
     else:
         return render(request, "auctions/register.html")
+
+
+def inserirproduto(request):
+    if request.method == "POST":
+        titulo = request.POST['titulo']
+        descricao = request.POST['descricao']
+        lanceinicial = request.POST['lanceinicial']
+        link = request.POST['linkimagem']
+        categoria = request.POST['categoria']
+
+        registro = Anuncio(titulo=titulo, descricao=descricao,
+                           lance_inicial=lanceinicial, imagem=link, categoria=categoria)
+        registro.save()
+    return render(request, "auctions/inseriranuncio.html")
