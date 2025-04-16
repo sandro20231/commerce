@@ -38,3 +38,11 @@ class Comentarios(models.Model):
 
     def __str__(self):
         return f"Nome: {self.nome},{self.tituloacomentar} Data: {self.data}, comentario: {self.comentario}"
+
+
+class Listadeobservação(models.Model):
+    anuncio = models.ForeignKey(
+        Anuncio, on_delete=models.CASCADE, related_name="anucioobservacao")
+
+    def __str__(self):
+        return f"{self.anuncio}"
