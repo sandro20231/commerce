@@ -76,3 +76,8 @@ def inserirproduto(request):
                            lance_inicial=lanceinicial, imagem=link, categoria=categoria)
         registro.save()
     return render(request, "auctions/inseriranuncio.html")
+
+
+def mostraranuncio(request, anuncio):
+    registro = Anuncio.objects.filter(titulo=anuncio).first()
+    return render(request, "auctions/mostraranuncio.html", {"registro": registro})

@@ -16,7 +16,8 @@
         <tr>
 
             <td class="tabela"><img src="{{ l.imagem }}" alt="Imagem do anúncio" width="200"></td>
-            <td class="tabela">{{ l.titulo }}<br> {{ l.categoria }}<br> ${{ l.lance_inicial }}
+            <td class="tabela"><a href="anuncio/{{ l.titulo }}">{{ l.titulo }}</a><br> {{ l.categoria }}<br> ${{
+                l.lance_inicial }}
             </td>
             <td class="tabela2">{{ l.descricao }}</td>
             <br>

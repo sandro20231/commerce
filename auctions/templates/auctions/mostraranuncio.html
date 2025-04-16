@@ -1,0 +1,13 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+{% if registro %}
+<h1>{{ registro.titulo }}</h1>
+<img src="{{  registro.imagem }}" class="imagemmostrarproduto">
+<ul>
+    <li>Lance inicial: R$ {{ registro.lance_inicial }} </li>
+    <li>Descrição : {{ registro.descricao }} </li>
+    <li>Categoria: {{ registro.categoria }}</li>
+</ul>
+{% endif %}
+{% endblock %}
